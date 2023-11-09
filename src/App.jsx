@@ -1,9 +1,25 @@
-import './App.scss'
-import Navbar from './components/Navbar'
+import './App.scss';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import RootLayout from './components/RootLayout';
+import HomePage from './components/HomePage';
+import AboutPage from './components/AboutPage';
+import MusicPage from './components/MusicPage';
 
-function App() {
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <RootLayout />,
+    children: [
+      { path: '/', element: <HomePage /> },
+      { path: '/about', element: <AboutPage /> },
+      { path: '/music', element: <MusicPage /> },
+    ],
+  },
+]);
+
+function App({ children }) {
   return (
-    <Navbar />
+    <RouterProvider router={router}>{children}</RouterProvider>
   )
 }
 
