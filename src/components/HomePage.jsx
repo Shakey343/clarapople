@@ -2,7 +2,7 @@ import Container from "./Container";
 
 const HomePage = () => {
   return (
-    <div className="bg-home-page bg-no-repeat bg-center h-[170vh] pt-20">
+    <div className="bg-home-page bg-no-repeat bg-center min-h-[170vh] pt-20">
       <Container>
         <div className="flex justify-center">
           <div className="w-[800px] h-[750px] relative">
