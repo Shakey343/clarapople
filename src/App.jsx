@@ -1,7 +1,7 @@
 import './App.scss';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import RootLayout from './components/RootLayout';
-import HomePage from './components/HomePage';
+import HomePage from './components/Homepage';
 import AboutPage from './components/AboutPage';
 import MusicPage from './components/MusicPage';
 
