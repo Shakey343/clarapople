@@ -2,11 +2,11 @@ import Container from "./Container";
 
 const AboutPage = () => {
   return (
-    <div className="pt-20 bg-about-page bg-no-repeat min-h-[200vh] bg-150 bg-right-top font-mono">
+    <div className="pt-20 bg-about-page bg-no-repeat min-h-[200vh] bg-150 bg-right-top font-mono text-white">
       <Container className="relative">
-        <div className="absolute right-0 w-[50vw] top-[20vh]">
+        <div className="absolute right-10 w-[45vw] top-[20vh]">
           <h2 className="text-4xl">About</h2>
-          <div className="p-5">
+          <div className="py-5">
             <p>
               Clara Pople is a soul/trip hop looper with the lungs of a deep-sea
               diver, the heart of a Barbary Lion and the voice of an English

@@ -1,9 +1,10 @@
 import Container from "./Container";
+import Upcoming from "./Upcoming";
 
 const HomePage = () => {
   return (
-    <div className="bg-home-page bg-no-repeat bg-center min-h-[170vh] pt-20">
-      <Container>
+    <div className="bg-home-page bg-no-repeat bg-center min-h-[170vh] pt-20 font-mono">
+      <Container className="relative">
         <div className="flex justify-center">
           <div className="w-[800px] h-[750px] relative">
             <img
@@ -18,6 +19,7 @@ const HomePage = () => {
             />
           </div>
         </div>
+        <Upcoming className="absolute top-[75vh] w-[40vw] text-white"/>
       </Container>
     </div>
   );
