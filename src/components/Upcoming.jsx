@@ -1,57 +1,68 @@
 const Upcoming = ({ className }) => {
-  let date = new Date();
-  date.setDate(date.getDate() - 1);
-
   const gigList = [
     {
-      date: date,
-      event: "Boat Gig",
-      location: "South Dock Marina",
+      date: (new Date("01/26/2024")),
+      event: "BOAT GIG",
+      location: "London, GB",
+    },
+    {
+      date: (new Date("02/02/2024 15:15:00")),
+      event: "Live Music Now",
+      location: "Southgate Beaumont Carehome",
+    },
+    {
+      date: (new Date("02/02/2024 21:00:00")),
+      event: "Livestream",
+      location: "Instagram",
       link: "https://www.google.com",
     },
     {
-      date: date,
-      event: "Boat Gig",
-      location: "South Dock Marina",
+      date: (new Date("02/09/2024")),
+      event: "Breaking Sound",
+      location: "Canal Bar",
+      link: "https://tixr.com/e/92914",
+    },
+    {
+      date: (new Date("02/19/2024")),
+      event: "BOAT GIG",
+      location: "",
       link: "https://www.google.com",
     },
     {
-      date: date,
-      event: "Boat Gig",
-      location: "South Dock Marina",
+      date: (new Date("02/20/2024")),
+      event: "BOAT GIG",
+      location: "",
       link: "https://www.google.com",
     },
     {
-      date: date,
-      event: "Boat Gig",
-      location: "South Dock Marina",
+      date: (new Date("02/24/2024")),
+      event: "BOAT GIG",
+      location: "",
       link: "https://www.google.com",
     },
     {
-      date: date,
-      event: "Boat Gig",
-      location: "South Dock Marina",
+      date: (new Date("03/09/2024")),
+      event: "BOAT GIG",
+      location: "",
       link: "https://www.google.com",
     },
     {
-      date: date,
-      event: "Boat Gig",
-      location: "South Dock Marina",
-      link: "https://www.google.com",
-    },
-    {
-      date: date,
-      event: "Boat Gig",
-      location: "South Dock Marina",
+      date: (new Date("03/22/2024")),
+      event: "BOAT GIG",
+      location: "",
       link: "https://www.google.com",
     },
   ];
 
   const mappedGigList = gigList.map((gig, i) => {
     let today = new Date();
+    let time = gig.date.toLocaleString("en-US", { hour: "numeric", hour12: true });
+
     if (gig.date < today) {
+      // Strikethrough old dates
       console.log("old date");
     }
+
       return (
         <tr
           key={i}
@@ -59,8 +70,8 @@ const Upcoming = ({ className }) => {
           onClick={() => window.open(gig.link, "_blank")}
         >
           <td className="p-4">
-            {date.getDate()}-{date.getMonth() + 1}-{date.getFullYear()} @{" "}
-            {date.toLocaleString("en-US", { hour: "numeric", hour12: true })}
+            {gig.date.getDate()}-{gig.date.getMonth() + 1}-{gig.date.getFullYear()}
+            {time != "12 AM" &&  ` @ ${time}`}
           </td>
           <td className="p-4">{gig.event}</td>
           <td className="p-4">{gig.location}</td>
