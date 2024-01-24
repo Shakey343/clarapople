@@ -1,0 +1,51 @@
+[
+  {
+    "date": "2024/1/26",
+    "event": "BOAT GIG",
+    "location": "London, GB"
+  },
+  {
+    "date": "2024/2/2",
+    "event": "Live Music Now",
+    "location": "London, GB"
+  },
+  {
+    "date": "2024/2/2",
+    "event": "Instagram Livestream",
+    "location": "Online",
+    "link": "https://www.instagram.com/clarapoplemusic/"
+  },
+  {
+    "date": "2024/2/9",
+    "event": "Canal Bar",
+    "location": "London, GB",
+    "link": "https://tixr.com/e/92914"
+  },
+  {
+    "date": "2024/2/19",
+    "event": "Cavendish Arms",
+    "location": "London, GB",
+    "link": "http://thecavpresents.co.uk/"
+  },
+  {
+    "date": "2024/2/20",
+    "event": "Gladstone Arms",
+    "location": "London, GB",
+    "link": "https://www.facebook.com/events/914230173206660"
+  },
+  {
+    "date": "2024/2/24",
+    "event": "BOAT GIG",
+    "location": "London, GB"
+  },
+  {
+    "date": "2024/3/9",
+    "event": "Dash The Henge",
+    "location": "London, GB"
+  },
+  {
+    "date": "2024/3/22",
+    "event": "BOAT GIG",
+    "location": "London, GB"
+  }
+]
