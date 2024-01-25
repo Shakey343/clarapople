@@ -16,7 +16,7 @@ const Upcoming = ({ className }) => {
       return (
         <tr
           key={i}
-          className="border-y border-white/40 hover:bg-black/30 cursor-pointer ease-in-out duration-100"
+          className="border-y border-white/40 bg-black/30 hover:bg-black/60 cursor-pointer ease-in-out duration-100"
           onClick={() => window.open(gig.link, "_blank")}
         >
           <td className="p-4">
