@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Container from "./Container";
 import Upcoming from "./Upcoming";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
 
 const HomePage = () => {
   const [atPageOne, setAtPageOne] = useState(false);
@@ -44,6 +46,7 @@ const HomePage = () => {
         </div>
         <Upcoming className="absolute top-60 sm:top-[75vh] w-full sm:w-[600px] text-slate-50 drop-shadow-lg" />
       </Container>
+      <FontAwesomeIcon icon={faFacebookF} />
     </div>
   );
 };
