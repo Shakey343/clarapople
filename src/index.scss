@@ -16,6 +16,11 @@ body {
   background-color: rgb(190, 10, 10);
 }
 
+#navbar a.active {
+  padding-bottom: 4px;
+  border-bottom: 3px solid white;
+}
+
 // :root {
 //   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 //   line-height: 1.5;

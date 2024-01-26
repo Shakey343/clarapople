@@ -30,7 +30,7 @@ const HomePage = () => {
 
   return (
     <div className="bg-home-page bg-no-repeat bg-center h-[1280px] pt-20 font-mono">
-      <div className="fixed flex flex-col items-center right-10 top-[14vh] sm:top-[36vh] z-10">
+      <div className="sm:fixed w-full sm:w-0 flex justify-evenly sm:flex-col sm:items-center right-10 top-0 sm:top-[36vh] z-10">
         <a
           href="https://www.instagram.com/clarapoplemusic/"
           target="_blank"
