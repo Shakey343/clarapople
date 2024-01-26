@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <div className="absolute w-full bottom-0 flex flex-col items-center justify-between md:items-end md:flex-row px-10 text-white font-mono p-5">
+    <div className="absolute w-full bottom-0 text-center sm:text-left flex flex-col items-center justify-between px-10 py-5 text-white font-mono md:items-end md:flex-row">
       <div className="lg:ml-36">
         <h2 className="text-2xl">Subscribe to my Newsletter</h2>
         <form action="" className="border-2 border-white bg-black/50 flex justify-between px-4 focus">
