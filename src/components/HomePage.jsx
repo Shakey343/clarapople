@@ -1,8 +1,13 @@
 import { useEffect, useState } from "react";
 import Container from "./Container";
 import Upcoming from "./Upcoming";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebookF,
+  faInstagram,
+  faSpotify,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 
 const HomePage = () => {
   const [atPageOne, setAtPageOne] = useState(false);
@@ -25,6 +30,56 @@ const HomePage = () => {
 
   return (
     <div className="bg-home-page bg-no-repeat bg-center h-[1280px] pt-20 font-mono">
+      <div className="fixed flex flex-col items-center right-10 top-[14vh] sm:top-[36vh] z-10">
+        <a
+          href="https://www.instagram.com/clarapoplemusic/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <FontAwesomeIcon
+            icon={faInstagram}
+            size="2xl"
+            inverse
+            className="my-3"
+          />
+        </a>
+        <a
+          href="https://www.facebook.com/ClaraPopleMusic"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <FontAwesomeIcon
+            icon={faFacebookF}
+            size="2xl"
+            inverse
+            className="my-3"
+          />
+        </a>
+        <a
+          href="https://open.spotify.com/artist/5Gg5vuh1ZYCT7fkuiVGnC1?si=yuzgZYgyTwKoKp07GHvDxg"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <FontAwesomeIcon
+            icon={faSpotify}
+            size="2xl"
+            inverse
+            className="my-3"
+          />
+        </a>
+        <a
+          href="https://www.youtube.com/@clarapople9601/videos"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <FontAwesomeIcon
+            icon={faYoutube}
+            size="2xl"
+            inverse
+            className="my-3"
+          />
+        </a>
+      </div>
       <Container className="relative">
         <div className="flex justify-center">
           <div className="w-[800px] h-[750px] flex justify-center mt-10 sm:mt-0 sm:relative">
@@ -46,7 +101,6 @@ const HomePage = () => {
         </div>
         <Upcoming className="absolute top-60 sm:top-[75vh] w-full sm:w-[600px] text-slate-50 drop-shadow-lg" />
       </Container>
-      <FontAwesomeIcon icon={faFacebookF} />
     </div>
   );
 };
