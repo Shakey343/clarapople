@@ -4,20 +4,20 @@ import { useEffect, useState } from "react";
 
 const Navbar = () => {
   const location = useLocation();
-  const [atTop, setAtTop] = useState(true)
-  const [atPageOne, setAtPageOne] = useState(false)
+  // const [atTop, setAtTop] = useState(true);
+  const [atPageOne, setAtPageOne] = useState(false);
 
-  useEffect(() => {
-    document.addEventListener("scroll", (e) => {
-      let scrolled = document.scrollingElement.scrollTop;
-      console.log(e);
-      if (scrolled >= 10) {
-        setAtTop(false);
-      } else {
-        setAtTop(true);
-      }
-    });
-  }, []);
+  // useEffect(() => {
+  //   document.addEventListener("scroll", (e) => {
+  //     let scrolled = document.scrollingElement.scrollTop;
+  //     console.log(e);
+  //     if (scrolled >= 10) {
+  //       setAtTop(false);
+  //     } else {
+  //       setAtTop(true);
+  //     }
+  //   });
+  // }, []);
 
   useEffect(() => {
     document.addEventListener("scroll", (e) => {
@@ -32,18 +32,18 @@ const Navbar = () => {
   }, []);
 
   const scrollToTop = () => {
-    console.log("to the top!")
+    console.log("to the top!");
     window.scrollTo({
       top: 0,
       left: 0,
       behavior: "smooth",
     });
-  }
+  };
 
   return (
     <div
-      className={`h-20 fixed inset-x-0 top-0 z-10 sm:bg-transparent ${
-        !atTop && "bg-black/50"
+      className={`h-20 fixed inset-x-0 top-0 z-10 ${
+        atPageOne && "bg-black/50"
       }`}
       id="navbar"
     >

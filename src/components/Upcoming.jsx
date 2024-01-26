@@ -1,6 +1,6 @@
 import gigList from "./gigs.json"
 
-const Upcoming = ({ className }) => {
+const Upcoming = () => {
   console.log(gigList)
 
   const mappedGigList = gigList.map((gig, i) => {
@@ -30,7 +30,7 @@ const Upcoming = ({ className }) => {
   });
 
   return (
-    <div className={className}>
+    <div className="w-full sm:w-[600px] text-slate-50 drop-shadow-lg">
       <h2 className="text-4xl">Upcoming Gigs</h2>
       <table className="w-full text-left mt-5 table-auto">
         <thead className="text-sm text-white/70">

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Socials from "./Socials";
 
 const MusicPage = () => {
   useEffect(() => {
@@ -6,7 +7,8 @@ const MusicPage = () => {
   }, []);
 
   return (
-    <div className="pt-20 bg-music-page bg-no-repeat min-h-[250vh] bg-150 bg-right">
+    <div className="pt-20 bg-music-page bg-no-repeat min-h-[250vh] bg-cover bg-center lg:bg-150 lg:bg-right">
+      <Socials />
       {/* MUSIC PAGE */}
     </div>
   );

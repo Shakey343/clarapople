@@ -23,11 +23,11 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="bg-home-page bg-no-repeat bg-center h-[1280px] pt-20 font-mono">
+    <div className="bg-home-page bg-no-repeat bg-bottom h-[1450px] pt-20 font-mono">
       <Socials />
       <Container className="relative">
         <div className="flex justify-center">
-          <div className="w-[800px] h-[750px] flex justify-center mt-10 sm:mt-0 sm:relative">
+          <div className="w-[800px] h-[250px] sm:h-[580px] flex justify-center mt-10 sm:mt-0 sm:relative">
             {!atPageOne && (
               <img
                 className="sm:absolute top-0 left-28 w-[200px] h-[160px] sm:w-[400px] sm:h-[300px] sm:top-10 sm:left-20 md:top-20 md:left-20 md:w-[400px] md:h-[300px] lg:-top-10 lg:left-0 lg:w-[600px] lg:h-[468px] drop-shadow-lg"
@@ -37,14 +37,14 @@ const HomePage = () => {
             )}
             {!atPageOne && (
               <img
-                className="sm:absolute left-60 h-[160px] w-[140px] sm:left-80 sm:bottom-48 sm:h-[280px] sm:w-[250px] md:bottom-48 md:left-[400px] lg:bottom-28 lg:left-[480px] lg:w-[361px] lg:h-[456px] drop-shadow-lg"
+                className="sm:absolute left-60 h-[160px] w-[140px] sm:left-80 sm:top-72 sm:h-[280px] sm:w-[250px] md:top-48 md:left-[400px] lg:top-48 lg:left-[480px] lg:w-[361px] lg:h-[456px] drop-shadow-lg"
                 src="https://static.wixstatic.com/media/a89751_486162f29e364c8bb1d3148fe982871d~mv2.png/v1/fill/w_578,h_730,al_c,q_90,enc_auto/Pople%20only%20signature%20white_edited_edited.png"
                 alt=""
               />
             )}
           </div>
         </div>
-        <Upcoming className="absolute top-60 sm:top-[75vh] w-full sm:w-[600px] text-slate-50 drop-shadow-lg" />
+        <Upcoming />
       </Container>
     </div>
   );

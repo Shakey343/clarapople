@@ -14,7 +14,8 @@ export default {
       },
       colors: {
         claraRed: "#be0a0acc",
-        claraBlue: "#659998"
+        claraBlue: "#659998",
+        claraGrey: "#626564"
       }
     },
     fontFamily: {
