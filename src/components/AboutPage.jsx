@@ -12,7 +12,7 @@ const AboutPage = () => {
       <Socials />
       <Container className="relative">
         <div className="absolute top-[20vh] sm:right-20 sm:top-[10vh] w-full h-[1200px] sm:w-[80vw] md:w-[48vw] lg:w-[35vw]">
-          <div className="sticky top-36 drop-shadow-2xl px-4 bg-black/80 md:bg-transparent">
+          <div className="sticky top-36 drop-shadow-2xl px-4 bg-black/80 md:bg-transparent mb-40">
             {/* <h2 className="text-4xl">About</h2> */}
             <div className="py-5">
               <p>
