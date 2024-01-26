@@ -8,13 +8,14 @@ export default {
         "music-page": "url('/images/b&w_stairs.jpg')",
         "about-page": "url('/images/pink_umbrella.jpg')",
       },
-    },
-    backgroundSize: {
-      auto: "auto",
-      cover: "cover",
-      contain: "contain",
-      "150": "150%",
-      16: "4rem",
+      backgroundSize: {
+        "150": "150%",
+        16: "4rem",
+      },
+      colors: {
+        claraRed: "#be0a0acc",
+        claraBlue: "#659998"
+      }
     },
     fontFamily: {
       'mono': ['Courier Prime', 'monospace']
