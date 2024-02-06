@@ -23,7 +23,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="bg-home-page bg-no-repeat bg-bottom h-[1450px] pt-20 font-mono">
+    <div className="bg-home-page bg-no-repeat lg:bg-bottom bg-cover h-[1450px] pt-20 font-mono">
       <Socials />
       <Container className="relative">
         <div className="flex justify-center">
