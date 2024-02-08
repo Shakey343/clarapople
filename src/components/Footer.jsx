@@ -10,7 +10,7 @@ const Footer = () => {
 
   const handleSubscribe = (event) => {
     event.preventDefault();
-    fetch(`${import.meta.env.VITE_BACKEND_URL}/api/v1/users/subscribe`, {
+    fetch(`${import.meta.env.VITE_BACKEND_URL}api/v1/users/subscribe`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
