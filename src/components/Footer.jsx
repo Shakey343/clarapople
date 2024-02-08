@@ -10,9 +10,6 @@ const Footer = () => {
 
   const handleSubscribe = (event) => {
     event.preventDefault();
-    console.log(
-      `backend: ${import.meta.env.VITE_BACKEND_URL}. Email: ${email}`
-    );
     fetch(`${import.meta.env.VITE_BACKEND_URL}/api/v1/users/subscribe`, {
       method: "POST",
       headers: {
