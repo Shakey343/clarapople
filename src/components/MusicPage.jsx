@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Socials from "./Socials";
 import Container from "./Container";
+import { faSpotify } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const MusicPage = () => {
   const [token, setToken] = useState("");
@@ -45,17 +47,17 @@ const MusicPage = () => {
         }
       )
         .then((response) => response.json())
-        .then((data) => setAlbums(data));
+        .then((data) => setAlbums(data.items.reverse()));
   }, [token]);
 
   return (
     <div className="pt-20 bg-music-page bg-no-repeat min-h-[250vh] bg-cover bg-center lg:bg-150 lg:bg-right">
       <Socials />
       <Container>
-        <div className="py-5 mt-[200px]">
-          <div className="flex justify-end mx-3">
+        <div className="py-5 w-full lg:w-[55vw] float-right mt-10 md:mt-[200px] sm:px-10 px-0">
+          <div className="flex justify-center">
             {albums &&
-              albums.items.map((album, i) => {
+              albums.map((album, i) => {
                 return (
                   <a
                     key={i}
@@ -64,25 +66,31 @@ const MusicPage = () => {
                     rel="noreferrer"
                     className="mx-3 shadow-black hover:ring-4 hover:ring-claraRed relative"
                   >
+                    <FontAwesomeIcon
+                      icon={faSpotify}
+                      size="2xl"
+                      className="absolute top-3 right-3 text-green-500"
+                    />
+                    {/* How do you show a child element on hover? */}
                     <div className="absolute hidden z-10">{album.name}</div>
                     <img src={album.images[1].url} alt={album.name} />
                   </a>
                 );
               })}
           </div>
-          <div className="flex justify-end m-6">
+          <div className="my-6 mx-3">
             <iframe
               id="ytplayer"
               type="text/html"
-              className="w-[55vw] h-[50vh]"
+              className="w-full h-[50vh]"
               src="https://www.youtube.com/embed/mPSvcRDjlfE?si=3BfbPDC0Fdq1igzN"
             ></iframe>
           </div>
-          <div className="flex justify-end m-6">
+          <div className="my-6 mx-3">
             <iframe
               id="ytplayer"
               type="text/html"
-              className="w-[55vw] h-[50vh]"
+              className="w-full h-[50vh]"
               src="https://www.youtube.com/embed/LJ2QwLSPbB0?si=S-t5b7S2-ZcvO0Ev"
             ></iframe>
           </div>
