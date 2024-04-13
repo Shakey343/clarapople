@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Container from "./Container";
-import Upcoming from "./Upcoming";
+import GigList from "./GigList";
 import Socials from "./Socials";
 
 const HomePage = () => {
@@ -44,7 +44,7 @@ const HomePage = () => {
             )}
           </div>
         </div>
-        <Upcoming />
+        <GigList />
       </Container>
     </div>
   );
