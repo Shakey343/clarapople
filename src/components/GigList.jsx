@@ -5,13 +5,14 @@ import gigList from "./gigs.json";
 const GigList = () => {
   const today = new Date();
   const [monthNo, setMonthNo] = useState(today.getMonth());
+  const [upcoming, setUpcoming] = useState(true);
 
   const date = new Date();
   date.setMonth(monthNo);
-  const monthString = date.toLocaleString("default", {
-    month: "long",
-    year: "2-digit",
-  });
+  // const monthString = date.toLocaleString("default", {
+  //   month: "long",
+  //   year: "2-digit",
+  // });
   const monthStr = date.toLocaleString("default", {
     month: "short",
     year: "2-digit",
@@ -53,8 +54,13 @@ const GigList = () => {
 
   return (
     <div className="w-full sm:w-[600px] text-slate-50 drop-shadow-lg">
-      <h2 className="text-4xl">Gigs - {monthString}</h2>
-      <table className="w-full text-left mt-5 table-auto">
+      <h2 className="text-4xl mb-5">{upcoming ? 'Upcoming' : 'Past'} Gigs</h2>
+      <div className="flex justify-center w-100">
+        <button className="hover:opacity-70" onClick={handleMinusMonth}>{"<-"}&nbsp;</button>
+        <span>{monthStr}</span>
+        <button className="hover:opacity-70" onClick={handleAddMonth}>&nbsp;{"->"}</button>
+      </div>
+      <table className="w-full text-left table-auto">
         <thead className="text-sm text-white/70">
           <tr className="w-full">
             <th className="px-4 py-2 font-normal">DATE</th>
@@ -64,11 +70,6 @@ const GigList = () => {
         </thead>
         <tbody>{mappedGigList}</tbody>
       </table>
-      <div className="flex justify-center w-100">
-        <button onClick={handleMinusMonth}>{"<-"}&nbsp;</button>
-        <span>{monthStr}</span>
-        <button onClick={handleAddMonth}>&nbsp;{"->"}</button>
-      </div>
     </div>
   );
 };
