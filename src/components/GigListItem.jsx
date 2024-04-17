@@ -3,10 +3,12 @@ import cn from "../../utils/cn";
 
 const GigListItem = ({ gig }) => {
   const [old, setOld] = useState(false);
+  console.log({gig})
+  console.log({old})
 
-  let today = new Date();
-  let date = new Date(gig.date);
-  let time = date.toLocaleString("en-US", { hour: "numeric", hour12: true });
+  const today = new Date();
+  const date = new Date(gig.date);
+  const time = date.toLocaleString("en-US", { hour: "numeric", hour12: true });
 
   useEffect(() => {
     if (date < today) {
@@ -17,7 +19,7 @@ const GigListItem = ({ gig }) => {
       // 4. Create way to cycle through pages of gigs (past & future)
       // links at bottom should say: <- Jan 24 ->
     }
-  }, []);
+  }, [date, today]);
 
   return (
     <tr
