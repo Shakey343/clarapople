@@ -1,11 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import GigListItem from "./GigListItem";
-import gigList from "./gigs.json";
+import gigListJson from "./gigs.json";
 
 const GigList = () => {
   const today = new Date();
   const [monthNo, setMonthNo] = useState(today.getMonth());
   const [upcoming, setUpcoming] = useState(true);
+  const [gigList, setGigList] = useState(gigListJson)
+
+  useEffect(() => {
+    fetch('YOUR_ENDPOINT_URL') // Replace with your actual endpoint URL
+      .then(response => response.json())
+      .then(data => setGigList(data))
+      .catch(error => console.error('Error fetching data:', error));
+  }, []);
 
   const date = new Date();
   date.setMonth(monthNo);
