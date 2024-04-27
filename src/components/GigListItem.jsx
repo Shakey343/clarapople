@@ -6,20 +6,16 @@ const GigListItem = ({ gig }) => {
   console.log({gig})
   console.log({old})
 
-  const today = new Date();
   const date = new Date(gig.date);
   const time = date.toLocaleString("en-US", { hour: "numeric", hour12: true });
 
   useEffect(() => {
-    if (date < today) {
-      setOld(true);
-      // 1. Connect to google drive api to create array of gigs
-      // 2. Sort the full list of gigs into chronilogical order
-      // 3. Only show gigs from today onwards (month by month)
-      // 4. Create way to cycle through pages of gigs (past & future)
-      // links at bottom should say: <- Jan 24 ->
-    }
-  }, [date, today]);
+    const today = new Date()
+    const yesterday = new Date(today)
+    yesterday.setDate(yesterday.getDate() - 1)
+    const gigDate = new Date(gig.date);
+    gigDate < yesterday ? setOld(true) : setOld(false);
+  }, [gig.date]);
 
   return (
     <tr

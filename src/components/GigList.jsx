@@ -47,7 +47,7 @@ const GigList = () => {
   );
 
   const mappedGigList = groupedGigs[monthNo]
-    ? groupedGigs[monthNo].map((gig, i) => {
+    ? groupedGigs[monthNo].sort((a, b) => new Date(a.date) - new Date(b.date)).map((gig, i) => {
         return <GigListItem key={i} gig={gig} />;
       })
     : noGigMessage;
