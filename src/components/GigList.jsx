@@ -1,41 +1,52 @@
 import { useEffect, useState } from "react";
 import GigListItem from "./GigListItem";
-import gigListJson from "./gigs.json";
 
 const GigList = () => {
   const today = new Date();
-  const [monthNo, setMonthNo] = useState(today.getMonth());
+  const [calendarDate, setCalendarDate] = useState(today);
   const [upcoming, setUpcoming] = useState(true);
-  const [gigList, setGigList] = useState(gigListJson)
+  const [gigList, setGigList] = useState([]);
+
+  console.log({calendarDate})
 
   useEffect(() => {
-    fetch('YOUR_ENDPOINT_URL') // Replace with your actual endpoint URL
-      .then(response => response.json())
-      .then(data => setGigList(data))
-      .catch(error => console.error('Error fetching data:', error));
+    const url = "https://sheet.best/api/sheets/5ce0540f-d93f-4590-a3f9-14c3b3c63a69";
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => setGigList(data.sort((a, b) => new Date(a.DATE) - new Date(b.DATE))))
+      .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
-  const date = new Date();
-  date.setMonth(monthNo);
-  // const monthString = date.toLocaleString("default", {
-  //   month: "long",
-  //   year: "2-digit",
-  // });
-  const monthStr = date.toLocaleString("default", {
+  const thisMonth = new Date();
+  thisMonth.setDate(1);
+  thisMonth.setMonth(calendarDate.getMonth());
+  thisMonth.setFullYear(calendarDate.getFullYear());
+
+  const monthYearStr = thisMonth.toLocaleString("default", {
     month: "short",
     year: "2-digit",
   });
 
   const handleAddMonth = () => {
-    setMonthNo((prevNo) => prevNo + 1);
+    setCalendarDate((prevDate) => {
+      const nextMonth = prevDate.getMonth() + 1;
+      const day = 1;
+      const year = prevDate.getFullYear();
+      return new Date(year, nextMonth, day);
+    });
   };
   const handleMinusMonth = () => {
-    setMonthNo((prevNo) => prevNo - 1);
+    setCalendarDate((prevDate) => {
+      const lastMonth = prevDate.getMonth() - 1;
+      const day = 1;
+      const year = prevDate.getFullYear();
+      return new Date(year, lastMonth, day);
+    });
   };
 
-  const groupedGigs = Object.groupBy(gigList, ({ date }) => {
-    const d = new Date(date);
-    return d.getMonth();
+  const groupedGigs = Object.groupBy(gigList, ({ DATE }) => {
+    const d = new Date(DATE);
+    return JSON.stringify([d.getFullYear(), d.getMonth()]);
   });
 
   const noGigMessage = (
@@ -43,7 +54,7 @@ const GigList = () => {
       className={
         "border-y border-white/40 bg-black/30 hover:bg-black/60 cursor-pointer ease-in-out duration-100"
       }
-      onClick={() => setMonthNo(today.getMonth())}
+      onClick={() => setCalendarDate(new Date(today.getFullYear(),today.getMonth(),1))}
     >
       <td className="p-4 text-center" colSpan="3">
         No gigs found 🤷
@@ -54,19 +65,24 @@ const GigList = () => {
     </tr>
   );
 
-  const mappedGigList = groupedGigs[monthNo]
-    ? groupedGigs[monthNo].sort((a, b) => new Date(a.date) - new Date(b.date)).map((gig, i) => {
-        return <GigListItem key={i} gig={gig} />;
-      })
+  const sortedGigs = groupedGigs[`[${calendarDate.getFullYear()},${calendarDate.getMonth()}]`]
+    ? groupedGigs[`[${calendarDate.getFullYear()},${calendarDate.getMonth()}]`]
+        .map((gig, i) => {
+          return <GigListItem key={i} gig={gig} />;
+        })
     : noGigMessage;
 
   return (
     <div className="w-full sm:w-[600px] text-slate-50 drop-shadow-lg">
-      <h2 className="text-4xl mb-5">{upcoming ? 'Upcoming' : 'Past'} Gigs</h2>
+      <h2 className="text-4xl mb-5">{upcoming ? "Upcoming" : "Past"} Gigs</h2>
       <div className="flex justify-center w-100">
-        <button className="hover:opacity-70" onClick={handleMinusMonth}>{"<-"}&nbsp;</button>
-        <span>{monthStr}</span>
-        <button className="hover:opacity-70" onClick={handleAddMonth}>&nbsp;{"->"}</button>
+        <button className="hover:opacity-70" onClick={handleMinusMonth}>
+          {"<-"}&nbsp;
+        </button>
+        <span>{monthYearStr}</span>
+        <button className="hover:opacity-70" onClick={handleAddMonth}>
+          &nbsp;{"->"}
+        </button>
       </div>
       <table className="w-full text-left table-auto">
         <thead className="text-sm text-white/70">
@@ -76,7 +92,7 @@ const GigList = () => {
             <th className="px-4 py-2 font-normal">LOCATION</th>
           </tr>
         </thead>
-        <tbody>{mappedGigList}</tbody>
+        <tbody>{sortedGigs}</tbody>
       </table>
     </div>
   );

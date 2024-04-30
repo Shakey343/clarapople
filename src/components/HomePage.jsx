@@ -11,9 +11,9 @@ const HomePage = () => {
   }, []);
 
   useEffect(() => {
-    document.addEventListener("scroll", (e) => {
+    document.addEventListener("scroll", () => {
       let scrolled = document.scrollingElement.scrollTop;
-      console.log(e);
+      // console.log(e);
       if (scrolled >= 450) {
         setAtPageOne(true);
       } else {
