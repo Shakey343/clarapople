@@ -11,8 +11,8 @@ const AboutPage = () => {
     <div className="pt-20 bg-about-page bg-no-repeat min-h-[200vh] bg-cover lg:bg-150 bg-right-top font-mono text-white">
       <Socials />
       <Container className="relative">
-        <div className="absolute top-[20vh] sm:right-20 sm:top-[10vh] w-full h-[1200px] sm:w-[80vw] md:w-[48vw] lg:w-[35vw]">
-          <div className="sticky top-36 drop-shadow-2xl px-4 bg-black/60 md:bg-transparent mb-40">
+        <div className="absolute top-[15vh] sm:right-20 sm:top-[10vh] w-full h-[1200px] sm:w-[80vw] md:w-[48vw] lg:w-[35vw]">
+          <div className="sticky top-40 drop-shadow-2xl px-4 bg-black/60 md:bg-transparent">
             {/* <h2 className="text-4xl">About</h2> */}
             <div className="py-5">
               <p>

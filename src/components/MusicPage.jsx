@@ -8,7 +8,7 @@ const MusicPage = () => {
   const [token, setToken] = useState("");
   const [albums, setAlbums] = useState();
 
-  console.log(albums);
+  // console.log(albums);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -34,7 +34,7 @@ const MusicPage = () => {
   }, []);
 
   useEffect(() => {
-    console.log({ token });
+    // console.log({ token });
     token &&
       fetch(
         `https://api.spotify.com/v1/artists/${
@@ -51,7 +51,7 @@ const MusicPage = () => {
   }, [token]);
 
   return (
-    <div className="pt-20 bg-music-page bg-no-repeat min-h-[250vh] bg-cover bg-center lg:bg-150 lg:bg-right">
+    <div className="pt-20 bg-music-page bg-no-repeat min-h-[200vh] bg-cover bg-center lg:bg-150 lg:bg-right">
       <Socials />
       <Container>
         <div className="py-5 w-full lg:w-[55vw] float-right mt-10 md:mt-[200px] sm:px-10 px-0">

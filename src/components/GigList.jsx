@@ -8,12 +8,27 @@ const GigList = () => {
   const [calendarDate, setCalendarDate] = useState(today);
   const [upcoming, setUpcoming] = useState(true);
   const [gigList, setGigList] = useState([]);
+  const [atPageOne, setAtPageOne] = useState(false);
 
   // console.log({calendarDate})
 
   useEffect(() => {
+    document.addEventListener("scroll", () => {
+      let scrolled = document.scrollingElement.scrollTop;
+      // console.log(e);
+      if (isMobile) {
+        scrolled >= 250 ? setAtPageOne(true) : setAtPageOne(false);
+      }
+    });
+  }, []);
+
+  useEffect(() => {
     const today = new Date();
-    calendarDate.getMonth() < today.getMonth() ? setUpcoming(false) : setUpcoming(true);
+    if (calendarDate.getFullYear() < today.getFullYear()) {
+      setUpcoming(false);
+    } else {
+      calendarDate.getMonth() < today.getMonth() ? setUpcoming(false) : setUpcoming(true);
+    }
   }, [calendarDate])
 
   useEffect(() => {
@@ -31,7 +46,7 @@ const GigList = () => {
 
   const monthYearStr = thisMonth.toLocaleString("default", {
     month: "short",
-    year: "2-digit",
+    year: "numeric",
   });
 
   const handleAddMonth = () => {
@@ -81,15 +96,17 @@ const GigList = () => {
 
   return (
     <div className="w-full sm:w-[600px] text-slate-50 drop-shadow-lg">
-      <h2 className={cn("text-4xl mb-5", isMobile && "text-center")}>{upcoming ? "Upcoming" : "Past"} Gigs</h2>
-      <div className="flex justify-center w-100">
-        <button className="hover:opacity-70" onClick={handleMinusMonth}>
-          {"<-"}&nbsp;
-        </button>
-        <span>{monthYearStr}</span>
-        <button className="hover:opacity-70" onClick={handleAddMonth}>
-          &nbsp;{"->"}
-        </button>
+      <div className={cn("w-full p-3", isMobile && "sticky top-[136px]", atPageOne && "bg-black/80")}>
+        <h2 className="text-4xl text-center">{upcoming ? "Upcoming" : "Past"} Gigs</h2>
+        <div className="flex justify-center w-100 text-2xl sm:text-base sticky">
+          <button className="hover:opacity-70" onClick={handleMinusMonth}>
+            {"<-"}&nbsp;
+          </button>
+          <span>{monthYearStr}</span>
+          <button className="hover:opacity-70" onClick={handleAddMonth}>
+            &nbsp;{"->"}
+          </button>
+        </div>
       </div>
       <table className="w-full text-left table-auto">
         <thead className="text-sm text-white/70">
@@ -101,6 +118,7 @@ const GigList = () => {
         </thead>
         <tbody>{sortedGigs}</tbody>
       </table>
+      <div className="h-[220px]"></div>
     </div>
   );
 };

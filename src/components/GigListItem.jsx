@@ -26,7 +26,7 @@ const GigListItem = ({ gig }) => {
       onClick={() => window.open(gig.LINK, "_blank")}
     >
       <td className="p-4">
-        {date.getDate()}-{date.getMonth() + 1}-{date.getFullYear()}
+        {date.getDate()}/{date.getMonth() + 1}
         {time != "12 AM" && ` @ ${time}`}
       </td>
       <td className="p-4">{gig.EVENT}</td>
