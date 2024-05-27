@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import GigListItem from "./GigListItem";
+import { isMobile } from "react-device-detect";
+import cn from "../../utils/cn";
 
 const GigList = () => {
   const today = new Date();
@@ -7,7 +9,12 @@ const GigList = () => {
   const [upcoming, setUpcoming] = useState(true);
   const [gigList, setGigList] = useState([]);
 
-  console.log({calendarDate})
+  // console.log({calendarDate})
+
+  useEffect(() => {
+    const today = new Date();
+    calendarDate.getMonth() < today.getMonth() ? setUpcoming(false) : setUpcoming(true);
+  }, [calendarDate])
 
   useEffect(() => {
     const url = "https://sheet.best/api/sheets/5ce0540f-d93f-4590-a3f9-14c3b3c63a69";
@@ -74,7 +81,7 @@ const GigList = () => {
 
   return (
     <div className="w-full sm:w-[600px] text-slate-50 drop-shadow-lg">
-      <h2 className="text-4xl mb-5">{upcoming ? "Upcoming" : "Past"} Gigs</h2>
+      <h2 className={cn("text-4xl mb-5", isMobile && "text-center")}>{upcoming ? "Upcoming" : "Past"} Gigs</h2>
       <div className="flex justify-center w-100">
         <button className="hover:opacity-70" onClick={handleMinusMonth}>
           {"<-"}&nbsp;
