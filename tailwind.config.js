@@ -13,7 +13,7 @@ export default {
         16: "4rem",
       },
       colors: {
-        claraRed: "#be0a0acc",
+        claraRed: "#be0a0a",
         claraBlue: "#659998",
         claraGrey: "#626564"
       }
