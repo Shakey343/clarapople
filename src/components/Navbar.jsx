@@ -1,32 +1,20 @@
 import { NavLink, useLocation } from "react-router-dom";
 import Container from "./Container";
 import { useEffect, useState } from "react";
+import { isMobile } from "react-device-detect";
 
 const Navbar = () => {
   const location = useLocation();
-  // const [atTop, setAtTop] = useState(true);
   const [atPageOne, setAtPageOne] = useState(false);
-
-  // useEffect(() => {
-  //   document.addEventListener("scroll", (e) => {
-  //     let scrolled = document.scrollingElement.scrollTop;
-  //     console.log(e);
-  //     if (scrolled >= 10) {
-  //       setAtTop(false);
-  //     } else {
-  //       setAtTop(true);
-  //     }
-  //   });
-  // }, []);
 
   useEffect(() => {
     document.addEventListener("scroll", () => {
       let scrolled = document.scrollingElement.scrollTop;
       // console.log(e);
-      if (scrolled >= 450) {
-        setAtPageOne(true);
+      if (isMobile) {
+        scrolled >= 250 ? setAtPageOne(true) : setAtPageOne(false);
       } else {
-        setAtPageOne(false);
+        scrolled >= 450 ? setAtPageOne(true) : setAtPageOne(false);
       }
     });
   }, []);
@@ -43,7 +31,7 @@ const Navbar = () => {
   return (
     <div
       className={`h-20 fixed inset-x-0 top-0 z-10 ${
-        atPageOne && "bg-black/50"
+        atPageOne && "bg-black/80"
       }`}
       id="navbar"
     >

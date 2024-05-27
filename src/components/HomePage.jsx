@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Container from "./Container";
 import GigList from "./GigList";
 import Socials from "./Socials";
+import { isMobile } from "react-device-detect";
 
 const HomePage = () => {
   const [atPageOne, setAtPageOne] = useState(false);
@@ -14,16 +15,16 @@ const HomePage = () => {
     document.addEventListener("scroll", () => {
       let scrolled = document.scrollingElement.scrollTop;
       // console.log(e);
-      if (scrolled >= 450) {
-        setAtPageOne(true);
+      if (isMobile) {
+        scrolled >= 250 ? setAtPageOne(true) : setAtPageOne(false);
       } else {
-        setAtPageOne(false);
+        scrolled >= 450 ? setAtPageOne(true) : setAtPageOne(false);
       }
     });
   }, []);
 
   return (
-    <div className="bg-home-page bg-no-repeat lg:bg-bottom bg-cover h-[1450px] pt-20 font-mono">
+    <div className="bg-home-page bg-no-repeat lg:bg-bottom bg-cover h-[1550px] pt-20 font-mono">
       <Socials />
       <Container className="relative">
         <div className="flex justify-center">
