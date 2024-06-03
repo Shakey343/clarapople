@@ -15,7 +15,7 @@ const Footer = () => {
       headers: {
         "Content-type": "application/json",
       },
-      body: JSON.stringify({email}),
+      body: JSON.stringify({ email }),
     })
       .then((response) => response.json())
       .then((data) => {

@@ -2,20 +2,20 @@ import { useEffect, useState } from "react";
 import GigListItem from "./GigListItem";
 import { isMobile } from "react-device-detect";
 import cn from "../../utils/cn";
+import useFetchCSVData from "../../hooks/useFetchCSVData";
 
 const GigList = () => {
   const today = new Date();
   const [calendarDate, setCalendarDate] = useState(today);
   const [upcoming, setUpcoming] = useState(true);
-  const [gigList, setGigList] = useState([]);
   const [atPageOne, setAtPageOne] = useState(false);
+  const {csvData: gigList} = useFetchCSVData();
 
-  // console.log({calendarDate})
+  // console.log({csvData})
 
   useEffect(() => {
     document.addEventListener("scroll", () => {
       let scrolled = document.scrollingElement.scrollTop;
-      // console.log(e);
       if (isMobile) {
         scrolled >= 250 ? setAtPageOne(true) : setAtPageOne(false);
       }
@@ -30,14 +30,6 @@ const GigList = () => {
       calendarDate.getMonth() < today.getMonth() ? setUpcoming(false) : setUpcoming(true);
     }
   }, [calendarDate])
-
-  useEffect(() => {
-    const url = "https://sheet.best/api/sheets/5ce0540f-d93f-4590-a3f9-14c3b3c63a69";
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => setGigList(data.sort((a, b) => new Date(a.DATE) - new Date(b.DATE))))
-      .catch((error) => console.error("Error fetching data:", error));
-  }, []);
 
   const thisMonth = new Date();
   thisMonth.setDate(1);
