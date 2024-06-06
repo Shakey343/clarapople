@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Container from "./Container";
 import Socials from "./Socials";
+import Banner from "./Banner";
 
 const AboutPage = () => {
   useEffect(() => {
@@ -8,11 +9,12 @@ const AboutPage = () => {
   }, []);
 
   return (
-    <div className="pt-20 bg-about-page bg-no-repeat min-h-[200vh] bg-cover lg:bg-150 bg-right-top font-mono text-white">
+    <div className="pt-20 bg-about-page bg-no-repeat min-h-[200vh] bg-cover lg:bg-150 bg-right-top text-white">
       <Socials />
+      <Banner />
       <Container className="relative">
         <div className="absolute top-[15vh] sm:right-20 sm:top-[10vh] w-full h-[1200px] sm:w-[80vw] md:w-[48vw] lg:w-[35vw]">
-          <div className="sticky top-40 drop-shadow-2xl px-4 bg-black/60 md:bg-transparent">
+          <div className="sticky top-64 sm:top-48 drop-shadow-2xl px-4 bg-black/60 md:bg-transparent">
             {/* <h2 className="text-4xl">About</h2> */}
             <div className="py-5">
               <p>

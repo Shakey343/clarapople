@@ -3,6 +3,7 @@ import Container from "./Container";
 import GigList from "./GigList";
 import Socials from "./Socials";
 import { isMobile } from "react-device-detect";
+import Banner from "./Banner";
 
 const HomePage = () => {
   const [atPageOne, setAtPageOne] = useState(false);
@@ -26,6 +27,7 @@ const HomePage = () => {
   return (
     <div className="bg-home-page bg-no-repeat lg:bg-bottom bg-cover min-h-[1500px] pt-20 font-mono">
       <Socials />
+      <Banner />
       <Container className="relative">
         <div className="flex justify-center">
           <div className="w-[800px] h-[250px] sm:h-[580px] flex justify-center mt-10 sm:mt-0 sm:relative">

@@ -3,6 +3,7 @@ import Socials from "./Socials";
 import Container from "./Container";
 import { faSpotify } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Banner from "./Banner";
 
 const MusicPage = () => {
   const [token, setToken] = useState("");
@@ -53,8 +54,9 @@ const MusicPage = () => {
   return (
     <div className="pt-20 bg-music-page bg-no-repeat min-h-[200vh] bg-cover bg-center lg:bg-150 lg:bg-right">
       <Socials />
+      <Banner />
       <Container>
-        <div className="py-5 w-full lg:w-[55vw] float-right mt-10 md:mt-[200px] sm:px-10 px-0">
+        <div className="py-5 w-full lg:w-[55vw] float-right mt-10 md:mt-[50px] sm:px-10 px-0">
           <div className="flex justify-center">
             {albums &&
               albums.map((album, i) => {
@@ -64,7 +66,7 @@ const MusicPage = () => {
                     href={album.external_urls.spotify}
                     target="_blank"
                     rel="noreferrer"
-                    className="mx-3 shadow-black hover:ring-4 hover:ring-claraRed relative"
+                    className="mx-3 shadow-black hover:ring-4 hover:ring-claraOrange relative"
                   >
                     <FontAwesomeIcon
                       icon={faSpotify}

@@ -87,8 +87,8 @@ const GigList = () => {
     : noGigMessage;
 
   return (
-    <div className="w-full sm:w-[600px] text-slate-50 drop-shadow-lg">
-      <div className={cn("w-full p-3", isMobile && "sticky top-[136px]", atPageOne && "bg-black/80")}>
+    <div className="w-full sm:w-[600px] text-slate-50 drop-shadow-lg pb-48">
+      <div className={cn("w-full p-3", isMobile && "sticky top-[228px]", atPageOne && "bg-black/80")}>
         <h2 className="text-4xl text-center">{upcoming ? "Upcoming" : "Past"} Gigs</h2>
         <div className="flex justify-center w-100 text-2xl sm:text-base sticky">
           <button className="hover:opacity-70" onClick={handleMinusMonth}>
@@ -110,7 +110,6 @@ const GigList = () => {
         </thead>
         <tbody>{sortedGigs}</tbody>
       </table>
-      <div className="h-[220px]"></div>
     </div>
   );
 };

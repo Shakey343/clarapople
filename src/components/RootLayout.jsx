@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 const RootLayout = () => {
   return (
-    <div className="relative">
+    <div className="relative font-mono">
       <Navbar />
       <Outlet />
       <Footer />

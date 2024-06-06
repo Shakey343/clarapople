@@ -20,7 +20,8 @@ const useFetchCSVData = () => {
     return sortedData;
   };
 
-  const fetchData = () => {
+
+  useEffect(() => {
     const csvUrl = import.meta.env.VITE_GOOGLE_SHEET; // Replace with your Google Sheets CSV file URL
     axios
       .get(csvUrl)
@@ -32,10 +33,6 @@ const useFetchCSVData = () => {
       .catch((error) => {
         console.error("Error fetching CSV data:", error);
       });
-  };
-
-  useEffect(() => {
-    fetchData();
   }, []);
 
   return { csvData };
