@@ -27,7 +27,7 @@ const links = [
 
 const Socials = () => {
   return (
-    <div className="sticky right-10 top-20 w-full flex justify-evenly z-10 bg-black/80 sm:fixed sm:w-0 sm:flex-col sm:items-center sm:top-[36vh] sm:bg-transparent">
+    <div className="sticky sm:right-10 top-20 w-full flex justify-evenly z-10 bg-black sm:fixed sm:w-0 sm:flex-col sm:items-center sm:top-[36vh] sm:bg-transparent">
       {links.map((link, i) => (
         <a href={link.link} target="_blank" rel="noreferrer" key={i}>
           <FontAwesomeIcon

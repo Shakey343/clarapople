@@ -9,7 +9,7 @@ const GigList = () => {
   const [calendarDate, setCalendarDate] = useState(today);
   const [upcoming, setUpcoming] = useState(true);
   const [atPageOne, setAtPageOne] = useState(false);
-  const {csvData: gigList} = useFetchCSVData();
+  const { csvData: gigList } = useFetchCSVData();
 
   // console.log({csvData})
 
@@ -27,9 +27,11 @@ const GigList = () => {
     if (calendarDate.getFullYear() < today.getFullYear()) {
       setUpcoming(false);
     } else {
-      calendarDate.getMonth() < today.getMonth() ? setUpcoming(false) : setUpcoming(true);
+      calendarDate.getMonth() < today.getMonth()
+        ? setUpcoming(false)
+        : setUpcoming(true);
     }
-  }, [calendarDate])
+  }, [calendarDate]);
 
   const thisMonth = new Date();
   thisMonth.setDate(1);
@@ -68,7 +70,9 @@ const GigList = () => {
       className={
         "border-y border-white/40 bg-black/30 hover:bg-black/60 cursor-pointer ease-in-out duration-100"
       }
-      onClick={() => setCalendarDate(new Date(today.getFullYear(),today.getMonth(),1))}
+      onClick={() =>
+        setCalendarDate(new Date(today.getFullYear(), today.getMonth(), 1))
+      }
     >
       <td className="p-4 text-center" colSpan="3">
         No gigs found 🤷
@@ -79,17 +83,28 @@ const GigList = () => {
     </tr>
   );
 
-  const sortedGigs = groupedGigs[`[${calendarDate.getFullYear()},${calendarDate.getMonth()}]`]
-    ? groupedGigs[`[${calendarDate.getFullYear()},${calendarDate.getMonth()}]`]
-        .map((gig, i) => {
-          return <GigListItem key={i} gig={gig} />;
-        })
+  const sortedGigs = groupedGigs[
+    `[${calendarDate.getFullYear()},${calendarDate.getMonth()}]`
+  ]
+    ? groupedGigs[
+        `[${calendarDate.getFullYear()},${calendarDate.getMonth()}]`
+      ].map((gig, i) => {
+        return <GigListItem key={i} gig={gig} />;
+      })
     : noGigMessage;
 
   return (
-    <div className="w-full sm:w-[600px] text-slate-50 drop-shadow-lg pb-48">
-      <div className={cn("w-full p-3", isMobile && "sticky top-[228px]", atPageOne && "bg-black/80")}>
-        <h2 className="text-4xl text-center">{upcoming ? "Upcoming" : "Past"} Gigs</h2>
+    <div className="w-full sm:w-[600px] text-slate-50 drop-shadow-lg pb-60 sm:pr-10">
+      <div
+        className={cn(
+          "w-full p-3",
+          isMobile && "sticky top-[228px]",
+          atPageOne && "bg-black/80"
+        )}
+      >
+        <h2 className="text-4xl text-center">
+          {upcoming ? "Upcoming" : "Past"} Gigs
+        </h2>
         <div className="flex justify-center w-100 text-2xl sm:text-base sticky">
           <button className="hover:opacity-70" onClick={handleMinusMonth}>
             {"<-"}&nbsp;
@@ -100,16 +115,18 @@ const GigList = () => {
           </button>
         </div>
       </div>
-      <table className="w-full text-left table-auto">
-        <thead className="text-sm text-white/70">
-          <tr className="w-full">
-            <th className="px-4 py-2 font-normal">DATE</th>
-            <th className="px-4 py-2 font-normal">EVENT</th>
-            <th className="px-4 py-2 font-normal">LOCATION</th>
-          </tr>
-        </thead>
-        <tbody>{sortedGigs}</tbody>
-      </table>
+      <div className="overflow-x-scroll">
+        <table className="w-full text-left table-auto">
+          <thead className="text-sm text-white/70">
+            <tr className="w-full">
+              <th className="px-4 py-2 font-normal">DATE</th>
+              <th className="px-4 py-2 font-normal">EVENT</th>
+              <th className="px-4 py-2 font-normal">LOCATION</th>
+            </tr>
+          </thead>
+          <tbody>{sortedGigs}</tbody>
+        </table>
+      </div>
     </div>
   );
 };

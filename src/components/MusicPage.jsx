@@ -52,7 +52,7 @@ const MusicPage = () => {
   }, [token]);
 
   return (
-    <div className="pt-20 bg-music-page bg-no-repeat min-h-[200vh] bg-cover bg-center lg:bg-150 lg:bg-right">
+    <div className="pt-20 bg-music-page bg-no-repeat min-h-[1500px] bg-cover bg-center lg:bg-150 lg:bg-right">
       <Socials />
       <Banner />
       <Container>

@@ -25,7 +25,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="bg-home-page bg-no-repeat lg:bg-bottom bg-cover min-h-[1500px] pt-20 font-mono">
+    <div className="bg-home-page bg-no-repeat lg:bg-bottom bg-cover pt-20 font-mono">
       <Socials />
       <Banner />
       <Container className="relative">
