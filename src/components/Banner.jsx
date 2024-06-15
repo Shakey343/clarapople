@@ -16,7 +16,7 @@ const Banner = () => {
                 alt="poison bottle"
                 />
               <p className="bg-claraDarkBlue py-2 px-4 text-white rounded-sm shadow-sm hover:shadow-lg">
-                Pre-Save
+                Out Now!
               </p>
               <img
                 className="h-[50px] hidden sm:block"

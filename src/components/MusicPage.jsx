@@ -9,7 +9,7 @@ const MusicPage = () => {
   const [token, setToken] = useState("");
   const [albums, setAlbums] = useState();
 
-  // console.log(albums);
+  console.log(albums);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -66,7 +66,7 @@ const MusicPage = () => {
                     href={album.external_urls.spotify}
                     target="_blank"
                     rel="noreferrer"
-                    className="mx-3 shadow-black hover:ring-4 hover:ring-claraOrange relative"
+                    className="mx-3 shadow-black hover:ring-4 hover:ring-claraOrange relative cursor-pointer group font-youtube font-thin"
                   >
                     <FontAwesomeIcon
                       icon={faSpotify}
@@ -74,7 +74,7 @@ const MusicPage = () => {
                       className="absolute top-3 right-3 text-green-500"
                     />
                     {/* How do you show a child element on hover? */}
-                    <div className="absolute hidden z-10">{album.name}</div>
+                    <div className="absolute hidden group-hover:block text-white z-10 mr-10 p-3">{album.name}{i === 0 && " - EP"}</div>
                     <img src={album.images[1].url} alt={album.name} />
                   </a>
                 );

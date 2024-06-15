@@ -22,7 +22,8 @@ export default {
     },
     fontFamily: {
       'mono': ['Courier Prime', 'monospace'],
-      'voluta': ['Voluta Script Pro', 'serif']
+      'voluta': ['Voluta Script Pro', 'serif'],
+      'youtube': ['Youtube-noto', 'Roboto', 'sans-serif']
     }
   },
   plugins: [],
