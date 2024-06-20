@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { faSpotify } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import useGetToken from "../../hooks/useGetToken";
 
 const SpotifyCards = () => {
-  const [token, setToken] = useState("");
+  const token = useGetToken();
   const [albums, setAlbums] = useState([]);
 
   console.log(albums);
@@ -13,27 +14,8 @@ const SpotifyCards = () => {
   }, []);
 
   useEffect(() => {
-    const client_id = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
-    const client_secret = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
-
-    fetch("https://accounts.spotify.com/api/token", {
-      method: "POST",
-      body:
-        "grant_type=client_credentials&client_id=" +
-        client_id +
-        "&client_secret=" +
-        client_secret,
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => setToken(data));
-  }, []);
-
-  useEffect(() => {
     // console.log({ token });
-    fetch(
+    token && fetch(
       `https://api.spotify.com/v1/artists/${
         import.meta.env.VITE_SPOTIFY_ARTIST_ID
       }/albums`,
@@ -44,11 +26,11 @@ const SpotifyCards = () => {
       }
     )
       .then((response) => response.json())
-      .then((data) => setAlbums(data.items.reverse()));
+      .then((data) => setAlbums(data.items));
   }, [token]);
 
   return (
-    <div className="flex justify-center flex-wrap sm:flex-nowrap">
+    <div className="flex justify-center flex-wrap gap-3 min-h-fit">
       {albums.map((album, i) => {
         return (
           <a
@@ -56,7 +38,7 @@ const SpotifyCards = () => {
             href={album.external_urls.spotify}
             target="_blank"
             rel="noreferrer"
-            className="mx-0 my-3 sm:m-3 shadow-black hover:ring-4 hover:ring-claraOrange relative cursor-pointer group font-youtube font-thin"
+            className="shadow-black hover:ring-4 hover:ring-claraOrange relative cursor-pointer group font-youtube font-thin sm:w-[30%]"
           >
             <FontAwesomeIcon
               icon={faSpotify}

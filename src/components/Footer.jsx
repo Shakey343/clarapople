@@ -43,12 +43,12 @@ const Footer = () => {
           <button type="submit">Sign Up</button>
         </form>
       </div>
-      <p className="pt-5 md:pt-0">
+      <p className="pt-5 md:pt-0 ml-5">
         Copyright ©{" "}
-        <a href="https://github.com/shakey343" target="_blank" rel="noreferrer">
+        <a href="https://github.com/shakey343" target="_blank" rel="noreferrer" className="hover:text-claraOrange">
           <strong>Jake Pople</strong>
         </a>{" "}
-        aka Broski
+        (aka Broski)
       </p>
     </div>
   );
