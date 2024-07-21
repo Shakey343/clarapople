@@ -27,7 +27,7 @@ const Footer = () => {
   };
 
   return (
-    <div className="absolute w-full bottom-0 text-center sm:text-left flex flex-col items-center justify-between px-10 py-5 text-white font-mono md:items-end md:flex-row">
+    <div className="absolute w-full bottom-0 text-center sm:text-left flex flex-col items-center justify-between pt-5 pb-16 px-8 sm:px-10 sm:pb-5 text-white font-mono md:items-end md:flex-row">
       <div className="lg:ml-36">
         <h2 className="text-2xl">Subscribe to my Newsletter</h2>
         <form

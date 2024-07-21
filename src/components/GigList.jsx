@@ -98,7 +98,7 @@ const GigList = () => {
       <div
         className={cn(
           "w-full p-3",
-          isMobile && "sticky top-[228px]",
+          isMobile && "sticky top-[172px]",
           atPageOne && "bg-black/80"
         )}
       >

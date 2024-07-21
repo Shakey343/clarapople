@@ -19,7 +19,7 @@ const HomePage = () => {
       if (isMobile) {
         scrolled >= 250 ? setAtPageOne(true) : setAtPageOne(false);
       } else {
-        scrolled >= 450 ? setAtPageOne(true) : setAtPageOne(false);
+        scrolled >= 350 ? setAtPageOne(true) : setAtPageOne(false);
       }
     });
   }, []);
