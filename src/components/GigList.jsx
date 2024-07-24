@@ -23,13 +23,12 @@ const GigList = () => {
   }, []);
 
   useEffect(() => {
-    const today = new Date();
-    if (calendarDate.getFullYear() < today.getFullYear()) {
+    const firstOfMonth = new Date();
+    firstOfMonth.setDate(0)
+    if (calendarDate <= firstOfMonth) {
       setUpcoming(false);
     } else {
-      calendarDate.getMonth() < today.getMonth()
-        ? setUpcoming(false)
-        : setUpcoming(true);
+      setUpcoming(true);
     }
   }, [calendarDate]);
 

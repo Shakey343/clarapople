@@ -5,11 +5,11 @@ import SpotifyCards from "./SpotifyCards";
 
 const MusicPage = () => {
   return (
-    <div className="bg-music-page bg-no-repeat pt-20 pb-100 bg-cover bg-center lg:bg-150 lg:bg-right min-h-[2800px] sm:min-h-[2100px]">
+    <div className="bg-music-page bg-no-repeat pt-20 pb-100 bg-cover bg-center lg:bg-150 lg:bg-right min-h-[3030px] md:min-h-[2100px] sm:min-h-[1900px]">
       <Socials />
       <Banner />
-      <Container className="h-full">
-        <div className="pt-5 mb-60 w-full lg:w-[55vw] float-right mt-10 md:mt-[50px] sm:pr-12 px-0">
+      <Container>
+        <div className="py-5 w-full lg:w-[55vw] float-right mt-10 md:mt-[50px] sm:pr-12 px-0">
           <SpotifyCards />
           <div className="my-6 mx-3">
             <iframe
