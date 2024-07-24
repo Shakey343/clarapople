@@ -12,7 +12,7 @@ const Navbar = () => {
       let scrolled = document.scrollingElement.scrollTop;
       // console.log(e);
       if (isMobile) {
-        scrolled >= 250 ? setAtPageOne(true) : setAtPageOne(false);
+        scrolled >= 160 ? setAtPageOne(true) : setAtPageOne(false);
       } else {
         scrolled >= 450 ? setAtPageOne(true) : setAtPageOne(false);
       }

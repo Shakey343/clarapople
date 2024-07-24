@@ -94,7 +94,7 @@ const GigList = () => {
     : noGigMessage;
 
   return (
-    <div className="w-full sm:w-[600px] text-slate-50 drop-shadow-lg pb-60 sm:pr-10">
+    <div className="w-full sm:w-[600px] text-slate-50 drop-shadow-lg pb-72 sm:pr-10">
       <div
         className={cn(
           "w-full p-3",
