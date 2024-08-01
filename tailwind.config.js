@@ -4,9 +4,9 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        "home-page": "url('/images/poison-bg.jpg')",
-        "music-page": "url('/images/b&w_stairs.jpg')",
-        "about-page": "url('/images/pink_umbrella.jpg')",
+        "home-page": "url('/src/assets/poison-bg.jpg')",
+        "music-page": "url('/src/assets/b&w_stairs.jpg')",
+        "about-page": "url('/src/assets/pink_umbrella.jpg')",
       },
       backgroundSize: {
         "150": "150%",
