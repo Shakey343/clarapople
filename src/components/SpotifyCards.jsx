@@ -47,7 +47,7 @@ const SpotifyCards = () => {
             />
             <div className="absolute hidden group-hover:block text-white z-10 mr-10 p-3">
               {album.name}
-              {i === 0 && " - EP"}
+              {i === albums.length - 2 && " - EP"}
             </div>
             <img src={album.images[1].url} alt={album.name} />
           </a>
