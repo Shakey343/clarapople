@@ -5,7 +5,7 @@ import SpotifyCards from "./SpotifyCards";
 
 const MusicPage = () => {
   return (
-    <div className="bg-music-page bg-no-repeat pt-20 pb-100 bg-cover bg-center lg:bg-150 lg:bg-right min-h-[3030px] md:min-h-[2100px] sm:min-h-[1900px]">
+    <div className="bg-music-page bg-no-repeat pt-20 pb-100 bg-cover bg-center lg:bg-150 lg:bg-right min-h-[3480px] md:min-h-[2100px] sm:min-h-[2010px]">
       <Socials />
       <Banner />
       <Container>
