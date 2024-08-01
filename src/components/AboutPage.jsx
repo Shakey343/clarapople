@@ -9,7 +9,7 @@ const AboutPage = () => {
   }, []);
 
   return (
-    <div className="pt-20 bg-about-page bg-no-repeat min-h-[1800px] bg-cover xl:bg-150 bg-right-top text-white">
+    <div className="pt-20 bg-about-page bg-no-repeat bg-center min-h-[1800px] bg-cover xl:bg-150 md:bg-right-top text-white">
       <Socials />
       <Banner />
       <Container className="relative">
