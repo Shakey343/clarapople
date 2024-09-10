@@ -15,18 +15,25 @@ const SpotifyCards = () => {
 
   useEffect(() => {
     // console.log({ token });
-    token && fetch(
-      `https://api.spotify.com/v1/artists/${
-        import.meta.env.VITE_SPOTIFY_ARTIST_ID
-      }/albums`,
-      {
-        headers: {
-          Authorization: `Bearer ${token.access_token}`,
-        },
-      }
-    )
-      .then((response) => response.json())
-      .then((data) => setAlbums(data.items));
+    token &&
+      fetch(
+        `https://api.spotify.com/v1/artists/${
+          import.meta.env.VITE_SPOTIFY_ARTIST_ID
+        }/albums`,
+        {
+          headers: {
+            Authorization: `Bearer ${token.access_token}`,
+          },
+        }
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          const allSongs = data.items;
+          const wantedSongs = allSongs.filter(
+            (song) => song.album_group !== "appears_on"
+          );
+          setAlbums(wantedSongs);
+        });
   }, [token]);
 
   return (
