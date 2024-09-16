@@ -3,6 +3,7 @@ import axios from "axios";
 
 const useFetchCSVData = () => {
   const [csvData, setCsvData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const parseCSV = (csvText) => {
     const rows = csvText.split(/\r?\n/); // Split CSV text into rows, handling '\r' characters
@@ -28,6 +29,7 @@ const useFetchCSVData = () => {
       .then((response) => {
         const parsedCsvData = parseCSV(response.data);
         setCsvData(parsedCsvData);
+        setLoading(false);
         console.log(parsedCsvData);
       })
       .catch((error) => {
@@ -35,7 +37,7 @@ const useFetchCSVData = () => {
       });
   }, []);
 
-  return { csvData };
+  return { csvData, loading };
 };
 
 export default useFetchCSVData;

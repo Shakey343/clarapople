@@ -9,7 +9,7 @@ const GigList = () => {
   const [calendarDate, setCalendarDate] = useState(today);
   const [upcoming, setUpcoming] = useState(true);
   const [atPageOne, setAtPageOne] = useState(false);
-  const { csvData: gigList } = useFetchCSVData();
+  const { csvData: gigList, loading: loading } = useFetchCSVData();
 
   // console.log({csvData})
 
@@ -74,7 +74,7 @@ const GigList = () => {
       }
     >
       <td className="p-4 text-center" colSpan="3">
-        No gigs found 🤷
+        {loading ? "loading gigs..." : "No gigs found 🤷"}
         <br />
         {"<-"} Return to{" "}
         {today.toLocaleString("default", { month: "long", year: "2-digit" })}
