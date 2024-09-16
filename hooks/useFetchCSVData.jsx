@@ -30,7 +30,7 @@ const useFetchCSVData = () => {
         const parsedCsvData = parseCSV(response.data);
         setCsvData(parsedCsvData);
         setLoading(false);
-        console.log(parsedCsvData);
+        // console.log(parsedCsvData);
       })
       .catch((error) => {
         console.error("Error fetching CSV data:", error);

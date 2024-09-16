@@ -1,33 +1,32 @@
-import poisonBottleImg from "../assets/poison-bottle-no-bg.png"
+import hotMoonIcon from "../assets/hot_moon_no_bg.png";
 
 const Banner = () => {
+  const banner = {
+    name: "Hot Moon",
+    alt: "Hot Moon album artwork",
+    releaseDate: "9/19/24",
+  };
+
+  const today = new Date();
+  const release = new Date(banner.releaseDate);
+  let btnText = today < release ? "Pre-Save" : "Out Now";
+
   return (
-    <a href="https://slinky.to/PoisonCP" target="_blank" rel="noreferrer">
-      <div className="w-screen py-3 px-5 sm:px-0 diagonal-split-background sticky top-20 flex justify-center z-20 mb-5 shadow-lg">
+    <a href="https://slinky.to/HOTMOON" target="_blank" rel="noreferrer">
+      <div className="w-screen py-3 px-5 sm:px-0 hot-moon-gradient sticky top-20 flex justify-center z-20 mb-5 shadow-lg">
         <div className="flex w-full justify-evenly">
-          <div className="flex justify-end items-center sm:w-[300px]">
-            <span className="text-white text-2xl font-bold">NEW SINGLE</span>
-            <span className="text-white text-2xl font-bold hidden sm:block">
-              &nbsp;-
-            </span>
-            <span className="font-voluta text-[60px] text-white px-3 flex pt-2 leading-none">
-              Poison
+          <div className="flex justify-center items-center sm:w-[300px]">
+            <span className="font-druk text-[30px] text-wrap w-[100px] text-claraRed leading-none">
+              {banner.name}
             </span>
           </div>
+          <div className="flex justify-center items-center">
+            <img className="h-[70px]" src={hotMoonIcon} alt={banner.alt} />
+          </div>
           <div className="flex items-center justify-center sm:w-[300px]">
-            <img
-              className="h-[50px] hidden sm:block"
-              src={poisonBottleImg}
-              alt="poison bottle"
-            />
-            <p className="bg-claraDarkBlue py-2 px-4 text-white rounded-sm shadow-sm hover:shadow-lg text-center">
-              Out Now!
+            <p className="bg-claraRed hover:opacity-80 py-2 px-4 text-white rounded-sm shadow-sm hover:shadow-lg text-center">
+              {btnText}
             </p>
-            <img
-              className="h-[50px] hidden sm:block"
-              src={poisonBottleImg}
-              alt="poison bottle"
-            />
           </div>
         </div>
       </div>

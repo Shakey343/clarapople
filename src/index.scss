@@ -9,6 +9,11 @@
   font-weight: 700;
 }
 
+@font-face {
+  font-family: "Druk Wide";
+  src: url('/fonts/DrukWideBold.ttf') format('truetype');
+}
+
 .full-width {
 	left: 50%;
 	margin-left: -50vw;
@@ -21,10 +26,17 @@
 
 #navbar a.active {
   padding-bottom: 4px;
-  border-bottom: 3px solid #FC702B;
+  border-bottom: 3px solid #FF3720;
 }
 
-.diagonal-split-background {
-  background-color: #08183B;
-  background-image: -webkit-linear-gradient(30deg, #08183B 50%, #FC702B 50%);
+
+.hot-moon-gradient {
+  background-color: #031824;
+  background-image: linear-gradient(#031824 50%, #0D3D58 100%);
 }
+
+// POISON BANNER LINEAR GRADIENT
+// .diagonal-split-background {
+//   background-color: #08183B;
+//   background-image: -webkit-linear-gradient(30deg, #08183B 50%, #FC702B 50%);
+// }

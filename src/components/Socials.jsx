@@ -27,7 +27,7 @@ const links = [
 
 const Socials = () => {
   return (
-    <div className="fixed sm:right-10 bottom-0 sm:top-28 w-full flex justify-evenly sm:justify-center z-10 bg-claraOrange sm:w-0 sm:flex-col sm:items-center sm:bg-transparent">
+    <div className="fixed sm:right-10 bottom-0 sm:top-28 w-full flex justify-evenly sm:justify-center z-10 bg-claraRed sm:w-0 sm:flex-col sm:items-center sm:bg-transparent">
       {links.map((link, i) => (
         <a href={link.link} target="_blank" rel="noreferrer" key={i}>
           <FontAwesomeIcon

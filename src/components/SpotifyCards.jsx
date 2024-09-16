@@ -45,12 +45,12 @@ const SpotifyCards = () => {
             href={album.external_urls.spotify}
             target="_blank"
             rel="noreferrer"
-            className="group shadow-black hover:ring-4 hover:ring-claraOrange hover:text-claraOrange relative cursor-pointer group font-youtube font-thin sm:w-[30%]"
+            className="group shadow-black hover:ring-4 hover:ring-claraRed hover:text-claraRed relative cursor-pointer group font-youtube font-thin sm:w-[30%]"
           >
             <FontAwesomeIcon
               icon={faSpotify}
               size="2xl"
-              className="absolute top-3 right-3 group-hover:text-claraOrange text-white/20"
+              className="absolute top-3 right-3 group-hover:text-claraRed text-white/20"
             />
             <div className="absolute hidden group-hover:block text-white z-10 mr-10 p-3">
               {album.name}

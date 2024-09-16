@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        "home-page": "url('/src/assets/poison-bg.jpg')",
+        "home-page": "url('/src/assets/hot_moon_bg.jpg')",
         "music-page": "url('/src/assets/b&w_stairs.jpg')",
         "about-page": "url('/src/assets/pink_umbrella.jpg')",
       },
@@ -13,16 +13,18 @@ export default {
         16: "4rem",
       },
       colors: {
-        claraRed: "#be0a0a",
+        claraOldRed: "#be0a0a",
         claraBlue: "#659998",
         claraGrey: "#626564",
         claraOrange: "#FC702B",
-        claraDarkBlue: "#08183B"
+        claraDarkBlue: "#08183B",
+        claraRed: "#FF3720"
       }
     },
     fontFamily: {
       'mono': ['Courier Prime', 'monospace'],
       'voluta': ['Voluta Script Pro', 'serif'],
+      'druk': ['Druk Wide', 'sans-serif'],
       'youtube': ['Youtube-noto', 'Roboto', 'sans-serif']
     }
   },

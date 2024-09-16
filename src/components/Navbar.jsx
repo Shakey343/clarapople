@@ -30,7 +30,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={`h-20 fixed inset-x-0 top-0 z-10 ${
+      className={`h-20 fixed inset-x-0 top-0 z-30 ${
         atPageOne && "bg-black sm:bg-black/80"
       }`}
       id="navbar"
