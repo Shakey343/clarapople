@@ -1,29 +1,30 @@
 import { useState } from "react";
+import axios from 'axios';
 
 const Footer = () => {
-  const [email, setEmail] = useState();
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState('');
 
   const handleChange = (e) => {
     const { value } = e.target;
     setEmail(value);
   };
 
-  const handleSubscribe = (event) => {
+  const handleSubscribe = async (event) => {
     event.preventDefault();
-    fetch(`${import.meta.env.VITE_BACKEND_URL}/api/v1/users/subscribe`, {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify({ email }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((e) => {
-        console.log("error", e);
-      });
+    try {
+      setStatus('Loading...');
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/v1/users/subscribe`, { email });
+      if (response.status === 200) {
+        setStatus('Subscription successful!');
+        setEmail(''); // Reset the email input
+      } else {
+        setStatus('Subscription failed. Please try again.');
+      }
+    } catch (error) {
+      console.error(error)
+      setStatus('Subscription failed. Please try again.');
+    }
   };
 
   return (
@@ -42,6 +43,7 @@ const Footer = () => {
           />
           <button type="submit">Sign Up</button>
         </form>
+        {status && <p>{status}</p>}
       </div>
       <p className="pt-5 md:pt-0 ml-5">
         Copyright ©{" "}
