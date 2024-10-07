@@ -16,7 +16,7 @@ const MusicPage = () => {
               id="ytplayer"
               type="text/html"
               className="w-full h-[50vh]"
-              src="https://www.youtube.com/embed/mPSvcRDjlfE?si=3BfbPDC0Fdq1igzN"
+              src="https://www.youtube.com/embed/MySX5NyWCAg?si=vWiQYdobuaGTkm70"
             ></iframe>
           </div>
           <div className="my-6 mx-3 sm:m-0">
@@ -24,7 +24,7 @@ const MusicPage = () => {
               id="ytplayer"
               type="text/html"
               className="w-full h-[50vh]"
-              src="https://www.youtube.com/embed/LJ2QwLSPbB0?si=S-t5b7S2-ZcvO0Ev"
+              src="https://www.youtube.com/embed/rKwoA3zcDqg?si=VG3uYWV6mjc6yueT"
             ></iframe>
           </div>
         </div>
