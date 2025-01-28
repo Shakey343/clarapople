@@ -24,7 +24,7 @@ const GigList = () => {
 
   useEffect(() => {
     const firstOfMonth = new Date();
-    firstOfMonth.setDate(0)
+    firstOfMonth.setDate(0);
     if (calendarDate <= firstOfMonth) {
       setUpcoming(false);
     } else {
@@ -82,15 +82,23 @@ const GigList = () => {
     </tr>
   );
 
-  const sortedGigs = groupedGigs[
-    `[${calendarDate.getFullYear()},${calendarDate.getMonth()}]`
-  ]
-    ? groupedGigs[
-        `[${calendarDate.getFullYear()},${calendarDate.getMonth()}]`
-      ].map((gig, i) => {
-        return <GigListItem key={i} gig={gig} />;
-      })
-    : noGigMessage;
+  console.log({ groupedGigs });
+  const thisMonthsGigs = groupedGigs[`[${calendarDate.getFullYear()},${calendarDate.getMonth()}]`];
+  const nextMonthsGigs = groupedGigs[`[${calendarDate.getFullYear()},${calendarDate.getMonth() + 1}]`];
+
+  let sortedGigs;
+
+  if (thisMonthsGigs) {
+    sortedGigs = thisMonthsGigs.map((gig, i) => {
+      return <GigListItem key={i} gig={gig} />;
+    })
+  } else if (!thisMonthsGigs && nextMonthsGigs) {
+    sortedGigs = nextMonthsGigs.map((gig, i) => {
+      return <GigListItem key={i} gig={gig} />;
+    });
+  } else {
+    sortedGigs = noGigMessage;
+  }
 
   return (
     <div className="w-full sm:w-[600px] text-slate-50 drop-shadow-lg pb-72 sm:pr-10">
