@@ -37,10 +37,14 @@ const GigList = () => {
   thisMonth.setMonth(calendarDate.getMonth());
   thisMonth.setFullYear(calendarDate.getFullYear());
 
-  const monthYearStr = thisMonth.toLocaleString("default", {
+  let monthYearStr = thisMonth.toLocaleString("default", {
     month: "short",
     year: "numeric",
   });
+
+  if (thisMonth.getMonth() === today.getMonth()) {
+    monthYearStr = "UPCOMING";
+  }
 
   const handleAddMonth = () => {
     setCalendarDate((prevDate) => {
@@ -74,7 +78,7 @@ const GigList = () => {
       }
     >
       <td className="p-4 text-center" colSpan="3">
-        {loading ? "loading gigs..." : "No gigs found 🤷"}
+        {loading ? "loading..." : "No gigs found 🤷"}
         <br />
         {"<-"} Return to{" "}
         {today.toLocaleString("default", { month: "long", year: "2-digit" })}
@@ -101,7 +105,7 @@ const GigList = () => {
   }
 
   return (
-    <div className="w-full sm:w-[600px] text-slate-50 drop-shadow-lg pb-72 sm:pr-10">
+    <div className="w-full sm:w-[600px] text-slate-50 drop-shadow-lg pb-72 sm:pr-10" id="dates">
       <div
         className={cn(
           "w-full p-3",
@@ -110,7 +114,7 @@ const GigList = () => {
         )}
       >
         <h2 className="text-4xl text-center">
-          {upcoming ? "Upcoming" : "Past"} Gigs
+          {upcoming ? "" : "Past"} Gigs
         </h2>
         <div className="flex justify-center w-100 text-2xl sm:text-base sticky">
           <button className="hover:opacity-70" onClick={handleMinusMonth}>

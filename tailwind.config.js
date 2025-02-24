@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        "home-page": "url('/src/assets/hot_moon_bg.jpg')",
+        "home-page": "url('/src/assets/uk_tour_bg.png')",
         "music-page": "url('/src/assets/b&w_stairs.jpg')",
         "about-page": "url('/src/assets/pink_umbrella.jpg')",
       },
@@ -18,7 +18,9 @@ export default {
         claraGrey: "#626564",
         claraOrange: "#FC702B",
         claraDarkBlue: "#08183B",
-        claraRed: "#FF3720"
+        claraRed: "#FF3720",
+        claraUKTour: "#FFBD59",
+        claraUKTourBg: "#00111D"
       }
     },
     fontFamily: {

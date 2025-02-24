@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Container from "./Container";
 import Socials from "./Socials";
-import Banner from "./Banner";
+// import AlbumBanner from "./AlbumBanner";
 
 const AboutPage = () => {
   useEffect(() => {
@@ -11,7 +11,7 @@ const AboutPage = () => {
   return (
     <div className="pt-20 bg-about-page bg-no-repeat bg-center min-h-[1800px] bg-cover xl:bg-150 md:bg-right-top text-white">
       <Socials />
-      <Banner />
+      {/* <AlbumBanner /> */}
       <Container className="relative">
         <div className="absolute top-[15vh] sm:right-20 sm:top-[10vh] w-full h-[1200px] sm:w-[80vw] md:w-[48vw] lg:w-[35vw]">
           <div className="sticky top-64 sm:top-48 drop-shadow-2xl px-4 bg-black/60 md:bg-transparent">
