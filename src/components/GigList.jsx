@@ -86,7 +86,7 @@ const GigList = () => {
     </tr>
   );
 
-  console.log({ groupedGigs });
+  // console.log({ groupedGigs });
   const thisMonthsGigs = groupedGigs[`[${calendarDate.getFullYear()},${calendarDate.getMonth()}]`];
   const nextMonthsGigs = groupedGigs[`[${calendarDate.getFullYear()},${calendarDate.getMonth() + 1}]`];
 

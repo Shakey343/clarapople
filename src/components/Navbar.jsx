@@ -20,7 +20,7 @@ const Navbar = () => {
   }, []);
 
   const scrollToTop = () => {
-    console.log("to the top!");
+    // console.log("to the top!");
     window.scrollTo({
       top: 0,
       left: 0,
