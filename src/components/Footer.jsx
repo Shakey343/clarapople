@@ -45,7 +45,7 @@ const Footer = () => {
         </form>
         {status && <p>{status}</p>}
       </div>
-      <p className="pt-5 md:pt-0 ml-5">
+      <p className="pt-5 md:pt-0 md:ml-5">
         Copyright ©{" "}
         <a href="https://github.com/shakey343" target="_blank" rel="noreferrer" className="hover:text-claraRed">
           <strong>Jake Pople</strong>

@@ -37,7 +37,7 @@ const SpotifyCards = () => {
   }, [token]);
 
   return (
-    <div className="flex justify-center flex-wrap gap-3 min-h-fit">
+    <div className="flex justify-center flex-wrap gap-3 relative h-fit">
       {albums.map((album, i) => {
         return (
           <a
