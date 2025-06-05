@@ -7,7 +7,7 @@ const SpotifyCards = () => {
   const token = useGetToken();
   const [albums, setAlbums] = useState([]);
 
-  // console.log(albums);
+  console.log(albums);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -52,9 +52,9 @@ const SpotifyCards = () => {
               size="2xl"
               className="absolute top-3 right-3 group-hover:text-claraRed text-white/20"
             />
-            <div className="absolute hidden group-hover:block text-white z-10 mr-10 p-3">
+            <div className="absolute hidden group-hover:block text-claraRed text-shadow-lg font-bold z-10 mr-10 p-3">
               {album.name}
-              {album.name === "It's The Girl" && " - EP"}
+              {album.total_tracks === 4 && " - EP"}
             </div>
             <img src={album.images[1].url} alt={album.name} />
           </a>
