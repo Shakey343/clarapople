@@ -9,12 +9,12 @@ const AboutPage = () => {
   }, []);
 
   return (
-    <div className="pt-20 bg-about-page bg-no-repeat bg-center min-h-[1800px] bg-cover xl:bg-150 md:bg-right-top text-white">
+    <div className="pt-20 bg-about-page bg-no-repeat bg-center min-h-[1600px] bg-cover sm:bg-center xl:bg-right-top text-white">
       <Socials />
       {/* <AlbumBanner /> */}
       <Container className="relative">
-        <div className="absolute top-[15vh] sm:right-20 sm:top-[10vh] w-full h-[1200px] sm:w-[80vw] md:w-[48vw] lg:w-[35vw]">
-          <div className="sticky top-64 sm:top-48 drop-shadow-2xl px-4 bg-black/60 md:bg-transparent">
+        <div className="absolute top-[15vh] sm:right-20 sm:top-[10vh] w-full h-[1000px] sm:w-[80vw] md:w-[48vw] lg:w-[35vw]">
+          <div className="sticky top-64 sm:top-48 drop-shadow-2xl px-4 bg-black/60 lg:bg-transparent">
             {/* <h2 className="text-4xl">About</h2> */}
             <div className="py-5">
               <p>

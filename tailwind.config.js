@@ -4,9 +4,9 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        "home-page": "url('/src/assets/uk_tour_bg.PNG')",
-        "music-page": "url('/src/assets/b&w_stairs.jpg')",
-        "about-page": "url('/src/assets/pink_umbrella.jpg')",
+        "home-page": "url('/src/assets/homepage.jpeg')",
+        "music-page": "url('/src/assets/silhoutte_claz.jpeg')",
+        "about-page": "url('/src/assets/b&w_sing.jpeg')",
       },
       backgroundSize: {
         "150": "150%",
