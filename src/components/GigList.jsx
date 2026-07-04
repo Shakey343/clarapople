@@ -126,7 +126,7 @@ const GigList = () => {
           </button>
         </div>
       </div>
-      <div className="overflow-x-scroll">
+      <div className="overflow-x-scroll sm:overflow-x-auto">
         <table className="w-full text-left table-auto">
           <thead className="text-sm text-white/70">
             <tr className="w-full">
